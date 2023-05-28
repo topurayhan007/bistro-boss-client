@@ -6,18 +6,24 @@ import PopularMenu from "../PopularMenu/PopularMenu";
 import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
-    return (
-        <div>
-            <Helmet>
-                <title>Bistro Boss | Home</title>
-            </Helmet>
-            <Banner></Banner>
-            <Category></Category>
-            <PopularMenu></PopularMenu>
-            <Featured></Featured>
-            <Testimonials></Testimonials>
+  return (
+    <div>
+      <Helmet>
+        <title>Bistro Boss | Home</title>
+      </Helmet>
+      <div className="">
+        <Banner></Banner>
+        <div className="max-w-screen-xl mx-auto">
+          <Category></Category>
+          <PopularMenu></PopularMenu>
         </div>
-    );
+        <Featured></Featured>
+        <div className="max-w-screen-xl mx-auto">
+          <Testimonials></Testimonials>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
