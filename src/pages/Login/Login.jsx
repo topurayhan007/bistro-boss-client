@@ -117,7 +117,7 @@ const Login = () => {
                 />
               </div>
             </form>
-            <p>
+            <p className="flex justify-center mb-8">
               <small>
                 New Here? <Link to="/signup">Create an account</Link>{" "}
               </small>

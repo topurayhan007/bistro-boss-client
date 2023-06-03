@@ -144,7 +144,7 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p>
+            <p className="flex justify-center">
               <small>
                 Already have an account <Link to="/login">Login</Link>
               </small>
