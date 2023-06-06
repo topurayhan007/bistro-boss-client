@@ -30,34 +30,36 @@ const NavBar = () => {
       </li>
       <li>
         <Link to="/dashboard/mycart">
-          <button className="btn gap-2">
+          <button className="btn gap-2 text-xl">
             <FaShoppingCart></FaShoppingCart>
             <div className="badge badge-secondary">+{cart?.length || 0}</div>
           </button>
         </Link>
       </li>
 
-      {user ? (
-        <div className="avatar">
-          <div className="w-12 rounded-full">
-            {user.photoURL === null ? (
-              <img
-                src="https://images.unsplash.com/photo-1576515652031-fc429bab6503?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-                alt=""
-              />
-            ) : (
-              <img src={user.photoURL} />
-            )}
+      <div className="flex items-center">
+        {user ? (
+          <div className="avatar">
+            <div className="w-12 h-12 rounded-full">
+              {user.photoURL === null ? (
+                <img
+                  src="https://images.unsplash.com/photo-1576515652031-fc429bab6503?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                  alt=""
+                />
+              ) : (
+                <img src={user.photoURL} />
+              )}
+            </div>
+            <button onClick={handleLogOut} className="btn btn-ghost">
+              LogOut
+            </button>
           </div>
-          <button onClick={handleLogOut} className="btn btn-ghost">
-            LogOut
-          </button>
-        </div>
-      ) : (
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-      )}
+        ) : (
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+      </div>
     </>
   );
 
@@ -89,7 +91,9 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
+            Bistro Boss
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
