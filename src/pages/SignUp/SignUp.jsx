@@ -26,13 +26,16 @@ const SignUp = () => {
           // console.log("user profile info updated");
           const saveUser = { name: data.name, email: data.email };
 
-          fetch("http://localhost:5000/users", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(saveUser),
-          })
+          fetch(
+            "https://bistro-boss-server-with-menu-and-order.vercel.app/users",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.insertedId) {
